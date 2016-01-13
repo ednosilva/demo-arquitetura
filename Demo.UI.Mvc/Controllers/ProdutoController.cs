@@ -2,9 +2,8 @@
 using System.Linq;
 using System.Web.Mvc;
 using Demo.Dominio;
-using Demo.Dominio.Exceptions;
-using Demo.Dominio.Interfaces.Aplicação;
 using Demo.UI.Mvc.ViewModels;
+using Demo.Aplicacao;
 
 namespace Demo.UI.Mvc.Controllers
 {
@@ -59,10 +58,11 @@ namespace Demo.UI.Mvc.Controllers
             if (ModelState.IsValid)
             {
                 var produto = new Produto
-                                  {
-                                      Nome = produtoViewModel.Nome,
-                                      Preço = produtoViewModel.Preco
-                                  };
+                                  (
+                                      codigoDeBarras: 1234,
+                                      nome: produtoViewModel.Nome,
+                                      preço: produtoViewModel.Preco
+                                  );
 
                 try
                 {

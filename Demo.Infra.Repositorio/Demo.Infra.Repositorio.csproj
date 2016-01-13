@@ -73,6 +73,7 @@
     <Compile Include="ContextoBanco.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Configuracao\IGerenciadorDeRepositorio.cs" />
     <Compile Include="RepositorioDeCliente.cs" />
     <Compile Include="RepositorioBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,6 +84,10 @@
     <Compile Include="RepositorioDeVenda.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Demo.Aplicacao\Demo.Aplicacao.csproj">
+      <Project>{2f778181-7c3f-4de8-8f5b-e879d9ac37c5}</Project>
+      <Name>Demo.Aplicacao</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Demo.Dominio\Demo.Dominio.csproj">
       <Project>{9342C7B5-495A-4B24-BB67-E0B0DAC59BE6}</Project>
       <Name>Demo.Dominio</Name>

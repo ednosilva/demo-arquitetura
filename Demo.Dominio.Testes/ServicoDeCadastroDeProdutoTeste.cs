@@ -1,5 +1,4 @@
-﻿using Demo.Dominio.Exceptions;
-using Demo.Dominio.Interfaces.Repositórios;
+﻿using Demo.Dominio.Repositórios;
 using Demo.Dominio.Servicos;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -24,7 +23,7 @@ namespace Demo.Dominio.Testes
         public void Quando_cadastrar_um_produto_que_ja_existe_lança_exception()
         {
             // arrage
-            var produto = new Produto() { Nome = "Camisa Polo" };
+            var produto = new Produto(codigoDeBarras: 1238, nome: "Camisa Polo", preço: 100m);
             _mockIRepositorioDeProduto
                 .Setup(x => x.ProdutoJáExiste(produto.Nome))
                 .Returns(true);
@@ -37,7 +36,7 @@ namespace Demo.Dominio.Testes
         public void Quando_cadastrar_um_produto_que_não_existe_insere_no_repositorio()
         {
             // arrage
-            var produto = new Produto { Nome = "Camisa Polo" };
+            var produto = new Produto(codigoDeBarras: 1238, nome: "Camisa Polo", preço: 100m);
             _mockIRepositorioDeProduto
                 .Setup(x => x.ProdutoJáExiste(produto.Nome))
                 .Returns(false);

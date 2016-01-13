@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web;
 using System.Web.Routing;
-using Demo.Dominio.Interfaces.Repositórios;
+using Demo.Dominio.Repositórios;
 using Microsoft.Practices.ServiceLocation;
 
 namespace Demo.UI.Mvc.Infra

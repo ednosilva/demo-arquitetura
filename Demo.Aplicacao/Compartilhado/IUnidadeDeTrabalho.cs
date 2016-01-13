@@ -1,8 +1,9 @@
-﻿namespace Demo.Dominio.Interfaces.Infraestrutura
+﻿namespace Demo.Aplicacao.Compartilhado
 {
     public interface IUnidadeDeTrabalho
     {
         void Iniciar();
-        void Persistir();
+
+        void Completar();
     }
 }

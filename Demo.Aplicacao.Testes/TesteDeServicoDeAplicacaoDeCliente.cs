@@ -1,4 +1,5 @@
-﻿using Demo.Dominio.Interfaces.Repositórios;
+﻿using Demo.Dominio.Repositórios;
+using Demo.Dominio.Repositórios;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 

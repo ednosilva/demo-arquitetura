@@ -1,5 +1,5 @@
 ﻿using Demo.Dominio;
-using Demo.Dominio.Interfaces.Repositórios;
+using Demo.Dominio.Repositórios;
 
 namespace Demo.Infra.Repositorio
 {

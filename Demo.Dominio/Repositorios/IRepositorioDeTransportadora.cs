@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Demo.Dominio.Compartilhado;
+using System.Collections.Generic;
 
-namespace Demo.Dominio.Interfaces.Repositórios
+namespace Demo.Dominio.Repositórios
 {
     public interface IRepositorioDeTransportadora : IRepositorioBase<Transportadora>
     {

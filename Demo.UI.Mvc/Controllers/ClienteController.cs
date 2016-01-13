@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using Demo.Dominio.Interfaces.Aplicação;
+using Demo.Aplicacao;
 
 namespace Demo.UI.Mvc.Controllers
 {

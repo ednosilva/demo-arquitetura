@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Demo.Dominio.Compartilhado;
+using System;
 using System.Collections.Generic;
 
-namespace Demo.Dominio.Interfaces.Repositórios
+namespace Demo.Dominio.Repositórios
 {
     public interface IRepositorioDeVenda : IRepositorioBase<Venda>
     {

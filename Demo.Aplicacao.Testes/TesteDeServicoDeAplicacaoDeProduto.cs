@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using Demo.Dominio;
-using Demo.Dominio.Interfaces.Domínio;
-using Demo.Dominio.Interfaces.Infraestrutura;
-using Demo.Dominio.Interfaces.Repositórios;
+using Demo.Dominio.Repositórios;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Moq.Sequences;
+using Demo.Dominio.Servicos;
+using Demo.Aplicacao.Compartilhado;
+using Demo.Dominio.Repositórios;
 
 namespace Demo.Aplicacao.Testes
 {
@@ -88,12 +89,12 @@ namespace Demo.Aplicacao.Testes
         public void Quando_CadastrarProduto_chamar_cadastrar_do_dominio_dentro_de_uma_transacao()
         {
             // arrange
-            var produto = new Produto();
+            var produto = new Produto(codigoDeBarras: 1238, nome: "Camisa Polo", preço: 100m);
             using (Sequence.Create())
             {
                 mockDaUnidadeDeTrabalho.Setup(_ => _.Iniciar()).InSequence();
                 mockDoServicoDeProduto.Setup(_ => _.CadastrarProduto(produto)).InSequence();
-                mockDaUnidadeDeTrabalho.Setup(_ => _.Persistir()).InSequence();
+                mockDaUnidadeDeTrabalho.Setup(_ => _.Completar()).InSequence();
 
                 // act
                 servico.CadastrarProduto(produto);
@@ -109,7 +110,7 @@ namespace Demo.Aplicacao.Testes
             {
                 mockDaUnidadeDeTrabalho.Setup(_ => _.Iniciar()).InSequence();
                 mockDoRepositorioDeProduto.Setup(_ => _.RemoverPorNome("produto de teste")).InSequence();
-                mockDaUnidadeDeTrabalho.Setup(_ => _.Persistir()).InSequence();
+                mockDaUnidadeDeTrabalho.Setup(_ => _.Completar()).InSequence();
 
                 // act
                 servico.RemoverPorNome("produto de teste");
@@ -136,7 +137,7 @@ namespace Demo.Aplicacao.Testes
         public void Quando_RecuperarPorNome_recuperar_por_nome_no_repositorio()
         {
             // arrange
-            var produto = new Produto();
+            var produto = new Produto(codigoDeBarras: 1238, nome: "Camisa Polo", preço: 100m);
             mockDoRepositorioDeProduto.Setup(_ => _.ObterProdutoPorNome("nome a ser pesquisado")).Returns(produto);
 
             // act

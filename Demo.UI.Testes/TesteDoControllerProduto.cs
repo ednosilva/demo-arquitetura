@@ -1,10 +1,10 @@
 ﻿using System.Web.Mvc;
 using Demo.Dominio;
-using Demo.Dominio.Interfaces.Aplicação;
 using Demo.UI.Mvc.Controllers;
 using Demo.UI.Mvc.ViewModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using Demo.Aplicacao;
 
 namespace Demo.UI.Testes
 {

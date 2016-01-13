@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Demo.Dominio.Interfaces.Repositórios
+namespace Demo.Dominio.Compartilhado
 {
     public interface IRepositorioBase<TEntidade> where TEntidade : class
     {

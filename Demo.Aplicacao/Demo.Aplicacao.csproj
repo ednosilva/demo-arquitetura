@@ -57,6 +57,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IServicoDeAplicacaoDaTransportadora.cs" />
+    <Compile Include="IServicoDeAplicacaoDeCliente.cs" />
+    <Compile Include="IServicoDeAplicacaoDeProduto.cs" />
+    <Compile Include="Compartilhado\IUnidadeDeTrabalho.cs" />
     <Compile Include="ServicoDeAplicacaoBase.cs" />
     <Compile Include="ServicoDeAplicacaoDaTransportadora.cs" />
     <Compile Include="ServicoDeAplicacaoDeCliente.cs" />

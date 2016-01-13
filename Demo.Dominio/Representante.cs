@@ -4,8 +4,19 @@ namespace Demo.Dominio
 {
     public class Representante : Participante
     {
-        public int PercentualDeComissao { get; set; }
+        public int PercentualDeComissao { get; private set; }
 
-        public IList<Cliente> Clientes { get; set; }
+        public IList<Cliente> Clientes { get; private set; }
+
+        private Representante() { }
+
+        public Representante(string Inscricao, string Nome, int PercentualDeComissao)
+        {
+            this.Inscricao = Inscricao;
+            this.Nome = Nome;
+            this.PercentualDeComissao = PercentualDeComissao;
+
+            this.Clientes = new List<Cliente>();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Demo.Dominio.Interfaces.Infraestrutura;
+﻿using Demo.Aplicacao.Compartilhado;
+using Demo.Dominio.Interfaces.Infraestrutura;
 using Microsoft.Practices.ServiceLocation;
 
 namespace Demo.Infra.Repositorio.Configuracao
@@ -17,7 +18,7 @@ namespace Demo.Infra.Repositorio.Configuracao
             _contexto = gerenciador.Contexto;
         }
 
-        public void Persistir()
+        public void Completar()
         {
             _contexto.SaveChanges();
         }

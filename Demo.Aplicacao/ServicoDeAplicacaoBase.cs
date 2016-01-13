@@ -1,4 +1,4 @@
-﻿using Demo.Dominio.Interfaces.Infraestrutura;
+﻿using Demo.Aplicacao.Compartilhado;
 using Microsoft.Practices.ServiceLocation;
 
 namespace Demo.Aplicacao
@@ -15,7 +15,7 @@ namespace Demo.Aplicacao
 
         public virtual void PersistirTransação()
         {
-            _unidadeDeTrabalho.Persistir();
+            _unidadeDeTrabalho.Completar();
         }
     }
 }

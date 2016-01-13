@@ -51,27 +51,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exceptions\ProdutoException.cs" />
-    <Compile Include="Interfaces\Aplicação\IServicoDeAplicacaoDaTransportadora.cs" />
-    <Compile Include="Interfaces\Aplicação\IServicoDeAplicacaoDeCliente.cs" />
-    <Compile Include="Interfaces\Aplicação\IServicoDeAplicacaoDeProduto.cs" />
-    <Compile Include="Interfaces\Domínio\IServicoDeCadastroDeProduto.cs" />
-    <Compile Include="Interfaces\Domínio\IServicoDeVenda.cs" />
-    <Compile Include="Interfaces\Infraestrutura\IGerenciadorDeRepositorio.cs" />
-    <Compile Include="Interfaces\Infraestrutura\IUnidadeDeTrabalho.cs" />
-    <Compile Include="Interfaces\Repositórios\IRepositorioBase.cs" />
-    <Compile Include="Interfaces\Repositórios\IRepositorioDeCliente.cs" />
-    <Compile Include="Interfaces\Repositórios\IRepositorioDeContasAReceber.cs" />
-    <Compile Include="Interfaces\Repositórios\IRepositorioDeProduto.cs" />
-    <Compile Include="Interfaces\Repositórios\IRepositorioDeRepresentante.cs" />
-    <Compile Include="Interfaces\Repositórios\IRepositorioDeTransportadora.cs" />
-    <Compile Include="Interfaces\Repositórios\IRepositorioDeVenda.cs" />
+    <Compile Include="ProdutoException.cs" />
+    <Compile Include="Servicos\IServicoDeCadastroDeProduto.cs" />
+    <Compile Include="Servicos\IServicoDeVenda.cs" />
+    <Compile Include="Compartilhado\IRepositorioBase.cs" />
+    <Compile Include="Repositorios\IRepositorioDeCliente.cs" />
+    <Compile Include="Repositorios\IRepositorioDeContasAReceber.cs" />
+    <Compile Include="Repositorios\IRepositorioDeProduto.cs" />
+    <Compile Include="Repositorios\IRepositorioDeRepresentante.cs" />
+    <Compile Include="Repositorios\IRepositorioDeTransportadora.cs" />
+    <Compile Include="Repositorios\IRepositorioDeVenda.cs" />
     <Compile Include="Servicos\ServicoDeCadastroDeProduto.cs" />
-    <Compile Include="Exceptions\DemoArquiteturaException.cs" />
+    <Compile Include="Compartilhado\DemoArquiteturaException.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Comissao.cs" />
     <Compile Include="ContaAReceber.cs" />
-    <Compile Include="Identificador.cs" />
+    <Compile Include="Compartilhado\IIdentificavel.cs" />
     <Compile Include="Venda.cs" />
     <Compile Include="ItemDaVenda.cs" />
     <Compile Include="Participante.cs" />
@@ -83,6 +78,7 @@
   <ItemGroup>
     <None Include="Modelo.cd" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

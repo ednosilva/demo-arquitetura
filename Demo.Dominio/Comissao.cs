@@ -1,13 +1,15 @@
-﻿namespace Demo.Dominio
+﻿using Demo.Dominio.Compartilhado;
+
+namespace Demo.Dominio
 {
-    public class Comissao : Identificador
+    public class Comissao : IIdentificavel
     {
-        public Representante Representante { get; set; }
+        public Representante Representante { get; private set; }
 
-        public decimal Valor { get; set; }
+        public decimal Valor { get; private set; }
 
-        public decimal ValorDaVenda { get; set; }
+        public decimal ValorDaVenda { get; private set; }
 
-        public int PercentualDaComissao { get; set; }
+        public int PercentualDaComissao { get; private set; }
     }
 }

@@ -1,6 +1,4 @@
-﻿using Demo.Dominio.Exceptions;
-using Demo.Dominio.Interfaces.Domínio;
-using Demo.Dominio.Interfaces.Repositórios;
+﻿using Demo.Dominio.Repositórios;
 
 namespace Demo.Dominio.Servicos
 {

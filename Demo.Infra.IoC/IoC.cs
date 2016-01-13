@@ -1,16 +1,15 @@
 ﻿using System.Web.Mvc;
 using CommonServiceLocator.SimpleInjectorAdapter;
 using Demo.Aplicacao;
-using Demo.Dominio.Interfaces.Aplicação;
-using Demo.Dominio.Interfaces.Domínio;
 using Demo.Dominio.Interfaces.Infraestrutura;
-using Demo.Dominio.Interfaces.Repositórios;
 using Demo.Dominio.Servicos;
 using Demo.Infra.Repositorio;
 using Demo.Infra.Repositorio.Configuracao;
 using Microsoft.Practices.ServiceLocation;
 using SimpleInjector;
 using SimpleInjector.Integration.Web.Mvc;
+using Demo.Aplicacao.Compartilhado;
+using Demo.Dominio.Repositórios;
 
 namespace Demo.Infra.IoC
 {

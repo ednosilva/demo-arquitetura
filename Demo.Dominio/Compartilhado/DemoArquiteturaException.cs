@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Demo.Dominio.Exceptions
+namespace Demo.Dominio.Compartilhado
 {
     public class DemoArquiteturaException : Exception
     {

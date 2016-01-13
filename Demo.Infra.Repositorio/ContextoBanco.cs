@@ -16,9 +16,13 @@ namespace Demo.Infra.Repositorio
         }
 
         public DbSet<Cliente> Clientes { get; set; }
+
         public DbSet<ContaAReceber> ContasAReceber { get; set; }
+
         public DbSet<Produto> Produtos { get; set; }
+
         public DbSet<Representante> Representantes { get; set; }
+
         public DbSet<Venda> Vendas { get; set; }
         public DbSet<Transportadora> Transportadoras { get; set; }
 

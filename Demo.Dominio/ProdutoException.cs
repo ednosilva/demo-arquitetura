@@ -1,6 +1,7 @@
-﻿using System;
+﻿using Demo.Dominio.Compartilhado;
+using System;
 
-namespace Demo.Dominio.Exceptions
+namespace Demo.Dominio
 {
     public class ProdutoException : DemoArquiteturaException
     {

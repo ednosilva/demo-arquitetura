@@ -1,4 +1,4 @@
-﻿namespace Demo.Dominio.Interfaces.Domínio
+﻿namespace Demo.Dominio.Servicos
 {
     public interface IServicoDeVenda
     {

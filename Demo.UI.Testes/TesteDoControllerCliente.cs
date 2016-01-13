@@ -1,9 +1,9 @@
 ﻿using System.Web.Mvc;
 using Demo.Dominio;
-using Demo.Dominio.Interfaces.Aplicação;
 using Demo.UI.Mvc.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using Demo.Aplicacao;
 
 namespace Demo.UI.Testes
 {
@@ -39,7 +39,7 @@ namespace Demo.UI.Testes
         {
             // arrange
             const string nomeDoCliente = "Cliente de Teste";
-            var cliente = new Cliente {Nome = nomeDoCliente};
+            var cliente = new Cliente(nome: nomeDoCliente, limiteDeCredito: 1000, inscricao: string.Empty);
             setupRecuperarClientePorId(cliente);
 
             // act

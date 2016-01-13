@@ -1,46 +1,72 @@
-﻿using System;
+﻿using Demo.Dominio.Compartilhado;
+using System;
 using System.Collections.Generic;
 
 namespace Demo.Dominio
 {
-    public class Venda : Identificador
+    public class Venda : IIdentificavel
     {
-        public Transportadora Transportadora { get; set; }
+        public Transportadora Transportadora { get; private set; }
 
-        public Transportadora Despachante { get; set; }
+        public Transportadora Despachante { get; private set; }
 
-        public virtual Cliente Cliente { get; set; }
+        public virtual Cliente Cliente { get; private set; }
 
-        public List<Comissao> Comissoes { get; set; }
+        public IList<Comissao> Comissoes { get; private set; }
 
-        public List<ContaAReceber> ContasAReceber { get; set; }
+        public IList<ContaAReceber> ContasAReceber { get; private set; }
 
-        public int NumeroDaNota { get; set; }
+        public int NumeroDaNota { get; private set; }
 
-        public virtual DateTime DataDaEmissao { get; set; }
+        public virtual DateTime DataDaEmissao { get; private set; }
 
-        public virtual DateTime DataDaSaida { get; set; }
+        public virtual DateTime DataDaSaida { get; private set; }
 
-        public virtual decimal ValorTotal { get; set; }
+        public virtual decimal ValorTotal { get; private set; }
 
-        public virtual List<ItemDaVenda> ItensDaVenda { get; set; }
+        public virtual IList<ItemDaVenda> ItensDaVenda { get; private set; }
 
-        public string Descricao { get; set; }
+        public string Descricao { get; private set; }
 
-        public bool FoiImpressa { get; set; }
+        public bool FoiImpressa { get; private set; }
 
-        public DateTime? DataDaImpressao { get; set; }
+        public DateTime? DataDaImpressao { get; private set; }
 
-        public string ChaveDeAcessoNFE { get; set; }
+        public string ChaveDeAcessoNFE { get; private set; }
 
-        public virtual List<Comissao> GerarComissoes()
+        private Venda() { }
+
+        public Venda(Cliente cliente, int numeroDaNota, DateTime dataDaEmissao,
+            DateTime dataDaSaida, int valorTotal, string descricao)
+        {
+            this.Cliente = cliente;
+            this.NumeroDaNota = numeroDaNota;
+            this.DataDaEmissao = dataDaEmissao;
+            this.DataDaSaida = dataDaSaida;
+            this.ValorTotal = valorTotal;
+            this.Descricao = descricao;
+
+            this.Comissoes = new List<Comissao>();
+            this.ContasAReceber = new List<ContaAReceber>();
+            this.ItensDaVenda = new List<ItemDaVenda>();
+        }
+
+        public virtual IList<Comissao> GerarComissoes()
         {
             return null;
         }
 
-        public virtual List<ContaAReceber> GerarContasAReceber()
+        public virtual IList<ContaAReceber> GerarContasAReceber()
         {
             return null;
+        }
+
+        public void AdicionarItem(ItemDaVenda itemDaVenda)
+        {
+            if (itemDaVenda == null)
+                throw new ArgumentNullException("itemDaVenda");
+
+            this.ItensDaVenda.Add(itemDaVenda);
         }
     }
 }

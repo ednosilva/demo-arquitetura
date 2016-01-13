@@ -1,5 +1,4 @@
 ﻿using System.Web;
-using Demo.Dominio.Interfaces.Infraestrutura;
 
 namespace Demo.Infra.Repositorio.Configuracao
 {

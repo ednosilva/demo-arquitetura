@@ -4,7 +4,7 @@ using Demo.Dominio.Repositórios;
 
 namespace Demo.Aplicacao
 {
-    public class ServicoDeAplicacaoDaTransportadora : ServicoDeAplicacaoBase, IServicoDeAplicacaoDaTransportadora
+    public class ServicoDeAplicacaoDaTransportadora : IServicoDeAplicacaoDaTransportadora
     {
         private readonly IRepositorioDeTransportadora _repositorioDeTransportadora;
 

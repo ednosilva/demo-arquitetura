@@ -1,6 +1,7 @@
-﻿namespace Demo.Aplicacao.Compartilhado
+﻿using System;
+namespace Demo.Aplicacao.Compartilhado
 {
-    public interface IUnidadeDeTrabalho
+    public interface IUnidadeDeTrabalho : IDisposable
     {
         void Iniciar();
 

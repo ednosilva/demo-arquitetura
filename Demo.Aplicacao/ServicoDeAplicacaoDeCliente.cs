@@ -3,7 +3,7 @@ using Demo.Dominio.Repositórios;
 
 namespace Demo.Aplicacao
 {
-    public class ServicoDeAplicacaoDeCliente : ServicoDeAplicacaoBase, IServicoDeAplicacaoDeCliente
+    public class ServicoDeAplicacaoDeCliente : IServicoDeAplicacaoDeCliente
     {
         private readonly IRepositorioDeCliente _repositorioDeCliente;
 

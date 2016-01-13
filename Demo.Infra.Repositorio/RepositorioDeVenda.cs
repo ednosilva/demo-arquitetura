@@ -6,9 +6,10 @@ using Demo.Dominio.Repositórios;
 
 namespace Demo.Infra.Repositorio
 {
-    public class RepositorioDeVenda
-        : RepositorioBase<Venda>, IRepositorioDeVenda
+    public class RepositorioDeVenda : RepositorioBase<Venda>, IRepositorioDeVenda
     {
+        public RepositorioDeVenda(ContextoBanco contexto) : base(contexto) { }
+
         #region IRepositorioDeVenda Members
 
         public IList<Venda> RecuperarVendasPorData(DateTime data)

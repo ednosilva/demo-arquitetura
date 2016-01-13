@@ -2,16 +2,18 @@
 using Demo.Dominio;
 using Demo.Dominio.Servicos;
 using Demo.Dominio.Repositórios;
+using Demo.Aplicacao.Compartilhado;
 
 namespace Demo.Aplicacao
 {
-    public class ServicoDeAplicacaoDeProduto : ServicoDeAplicacaoBase, IServicoDeAplicacaoDeProduto
+    public class ServicoDeAplicacaoDeProduto : IServicoDeAplicacaoDeProduto
     {
         private readonly IRepositorioDeProduto _repositorioDeProduto;
         private readonly IServicoDeCadastroDeProduto _servicoDeCadastroDeProduto;
+        private readonly IFabricaDeUnidadeDeTrabalho _fabricaDeUnidadeDeTrabalho;
 
         public ServicoDeAplicacaoDeProduto(IServicoDeCadastroDeProduto servicoDeCadastroDeProduto,
-                                           IRepositorioDeProduto repositorioDeProduto)
+            IRepositorioDeProduto repositorioDeProduto)
         {
             _servicoDeCadastroDeProduto = servicoDeCadastroDeProduto;
             _repositorioDeProduto = repositorioDeProduto;
@@ -21,9 +23,14 @@ namespace Demo.Aplicacao
 
         public virtual void CadastrarProduto(Produto produto)
         {
-            IniciarTransação();
-            _servicoDeCadastroDeProduto.CadastrarProduto(produto);
-            PersistirTransação();
+            using (var unidadeDeTrabalho = _fabricaDeUnidadeDeTrabalho.Criar())
+            {
+                unidadeDeTrabalho.Iniciar();
+
+                _servicoDeCadastroDeProduto.CadastrarProduto(produto);
+
+                unidadeDeTrabalho.Completar();
+            }
         }
 
         public virtual IList<Produto> RecuperarTodosOsProdutos()
@@ -38,9 +45,14 @@ namespace Demo.Aplicacao
 
         public virtual void RemoverPorNome(string nome)
         {
-            IniciarTransação();
-            _repositorioDeProduto.RemoverPorNome(nome);
-            PersistirTransação();
+            using (var unidadeDeTrabalho = _fabricaDeUnidadeDeTrabalho.Criar())
+            {
+                unidadeDeTrabalho.Iniciar();
+
+                _repositorioDeProduto.RemoverPorNome(nome);
+
+                unidadeDeTrabalho.Completar();
+            }
         }
 
         #endregion

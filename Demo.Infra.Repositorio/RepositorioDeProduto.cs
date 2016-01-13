@@ -6,9 +6,10 @@ using Demo.Dominio.Repositórios;
 
 namespace Demo.Infra.Repositorio
 {
-    public class RepositorioDeProduto
-        : RepositorioBase<Produto>, IRepositorioDeProduto
+    public class RepositorioDeProduto : RepositorioBase<Produto>, IRepositorioDeProduto
     {
+        public RepositorioDeProduto(ContextoBanco contexto) : base(contexto) { }
+
         #region IRepositorioDeProduto Members
 
         public Produto ObterProdutoPorNome(string nome)

@@ -24,6 +24,7 @@ namespace Demo.Infra.Repositorio
         public DbSet<Representante> Representantes { get; set; }
 
         public DbSet<Venda> Vendas { get; set; }
+
         public DbSet<Transportadora> Transportadoras { get; set; }
 
         protected override void Dispose(bool disposing)

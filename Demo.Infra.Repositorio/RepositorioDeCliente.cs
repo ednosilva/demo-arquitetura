@@ -7,6 +7,8 @@ namespace Demo.Infra.Repositorio
 {
     public class RepositorioDeCliente : RepositorioBase<Cliente>, IRepositorioDeCliente
     {
+        public RepositorioDeCliente(ContextoBanco contexto) : base(contexto) { }
+
         #region IRepositorioDeCliente Members
 
         public IList<Cliente> RecuperarPorLimiteDeCredito(decimal limiteInicial, decimal limiteFinal)

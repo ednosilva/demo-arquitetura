@@ -2,23 +2,18 @@
 using System.Diagnostics;
 using System.Linq;
 using Demo.Dominio;
-using Demo.Dominio.Interfaces.Infraestrutura;
 using Demo.Infra.Repositorio.Configuracao;
-using Microsoft.Practices.ServiceLocation;
 using Demo.Dominio.Compartilhado;
 
 namespace Demo.Infra.Repositorio
 {
-    public class RepositorioBase<TEntidade> : 
-        IRepositorioBase<TEntidade> where TEntidade : IIdentificavel
+    public class RepositorioBase<TEntidade> : IRepositorioBase<TEntidade> where TEntidade : IIdentificavel
     {
         protected readonly ContextoBanco _contexto;
 
-        public RepositorioBase()
+        public RepositorioBase(ContextoBanco contexto)
         {
-            var gerenciador = (GerenciadorDeRepositorioHttp) ServiceLocator.Current.GetInstance<IGerenciadorDeRepositorio>();
-
-            _contexto = gerenciador.Contexto;
+            _contexto = contexto;
 
             Debug.WriteLine("ID DO CONTEXTO EF: " + _contexto.GetHashCode());
         }

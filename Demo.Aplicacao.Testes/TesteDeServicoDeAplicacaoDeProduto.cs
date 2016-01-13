@@ -2,66 +2,14 @@
 using System.Collections.Generic;
 using Demo.Dominio;
 using Demo.Dominio.Repositórios;
-using Microsoft.Practices.ServiceLocation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Moq.Sequences;
 using Demo.Dominio.Servicos;
 using Demo.Aplicacao.Compartilhado;
-using Demo.Dominio.Repositórios;
 
 namespace Demo.Aplicacao.Testes
 {
-    public class ServiceLocatorProviderFake : IServiceLocator
-    {
-        private IUnidadeDeTrabalho _unidadeDeTrabalho;
-
-        public ServiceLocatorProviderFake(IUnidadeDeTrabalho unidadeDeTrabalho)
-        {
-            _unidadeDeTrabalho = unidadeDeTrabalho;
-        }
-
-        public IEnumerable<TService> GetAllInstances<TService>()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<object> GetAllInstances(Type serviceType)
-        {
-            throw new NotImplementedException();
-        }
-
-        public TService GetInstance<TService>(string key)
-        {
-            throw new NotImplementedException();
-        }
-
-        public TService GetInstance<TService>()
-        {
-            if (typeof(TService) == typeof(IUnidadeDeTrabalho))
-            {
-                return (TService)_unidadeDeTrabalho;
-            }
-
-            throw new NotImplementedException();
-        }
-
-        public object GetInstance(Type serviceType, string key)
-        {
-            throw new NotImplementedException();
-        }
-
-        public object GetInstance(Type serviceType)
-        {
-            throw new NotImplementedException();
-        }
-
-        public object GetService(Type serviceType)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
     [TestClass]
     public class TesteDeServicoDeAplicacaoDeProduto
     {
@@ -78,10 +26,7 @@ namespace Demo.Aplicacao.Testes
 
             servico = new ServicoDeAplicacaoDeProduto(mockDoServicoDeProduto.Object, mockDoRepositorioDeProduto.Object);
 
-
             mockDaUnidadeDeTrabalho = new Mock<IUnidadeDeTrabalho>();
-
-            ServiceLocator.SetLocatorProvider(() => new ServiceLocatorProviderFake(mockDaUnidadeDeTrabalho.Object));
         }
 
 
@@ -131,7 +76,6 @@ namespace Demo.Aplicacao.Testes
             mockDoRepositorioDeProduto.VerifyAll();
             Assert.AreSame(lista, retorno);
         }
-
 
         [TestMethod]
         public void Quando_RecuperarPorNome_recuperar_por_nome_no_repositorio()

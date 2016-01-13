@@ -1,6 +1,4 @@
 ﻿using Demo.Aplicacao.Compartilhado;
-using Demo.Dominio.Interfaces.Infraestrutura;
-using Microsoft.Practices.ServiceLocation;
 
 namespace Demo.Infra.Repositorio.Configuracao
 {
@@ -8,14 +6,14 @@ namespace Demo.Infra.Repositorio.Configuracao
     {
         private ContextoBanco _contexto;
 
-        #region IUnidadeDeTrabalho Members
+        public UnidadeDeTrabalhoEF(ContextoBanco contexto)
+        {
+            _contexto = contexto;
+        }
 
         public void Iniciar()
         {
-            var gerenciador = ServiceLocator.Current.GetInstance<IGerenciadorDeRepositorio>()
-                              as GerenciadorDeRepositorioHttp;
-
-            _contexto = gerenciador.Contexto;
+            
         }
 
         public void Completar()
@@ -23,6 +21,6 @@ namespace Demo.Infra.Repositorio.Configuracao
             _contexto.SaveChanges();
         }
 
-        #endregion
+        public void Dispose() { }
     }
 }

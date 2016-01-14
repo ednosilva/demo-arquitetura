@@ -1,11 +1,10 @@
 ﻿using System.Data.Entity;
 using System.Diagnostics;
 using System.Linq;
-using Demo.Dominio;
-using Demo.Infra.Repositorio.Configuracao;
 using Demo.Dominio.Compartilhado;
+using Demo.Infraestrutura.Configuracao;
 
-namespace Demo.Infra.Repositorio
+namespace Demo.Infraestrutura.Repositorio
 {
     public class RepositorioBase<TEntidade> : IRepositorioBase<TEntidade> where TEntidade : IIdentificavel
     {

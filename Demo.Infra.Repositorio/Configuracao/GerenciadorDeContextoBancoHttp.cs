@@ -1,8 +1,9 @@
-﻿using System.Web;
+﻿using Demo.Infraestrutura.Repositorio;
+using System.Web;
 
-namespace Demo.Infra.Repositorio.Configuracao
+namespace Demo.Infraestrutura.Configuracao
 {
-    public class GerenciadorDeRepositorioHttp : IGerenciadorDeRepositorio
+    public class GerenciadorDeContextoBancoHttp : IGerenciadorDeContexoBanco
     {
         public const string ContextoHttp = "ContextoHttp";
 

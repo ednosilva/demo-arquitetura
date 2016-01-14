@@ -1,20 +1,22 @@
 ﻿using System.Web.Mvc;
 using Demo.Aplicacao;
 using Demo.Dominio.Servicos;
-using Demo.Infra.Repositorio;
-using Demo.Infra.Repositorio.Configuracao;
+using Demo.Infraestrutura.Repositorio;
 using SimpleInjector;
 using SimpleInjector.Integration.Web.Mvc;
 using Demo.Aplicacao.Compartilhado;
 using Demo.Dominio.Repositórios;
+using Demo.Infraestrutura.Configuracao;
 
-namespace Demo.Infra.IoC
+namespace Demo.UI.Mvc
 {
     public static class IoC
     {
+        private static Container container;
+
         public static void Start()
         {
-            var container = new Container();
+            container = new Container();
 
             container.Register<IServicoDeAplicacaoDeProduto, ServicoDeAplicacaoDeProduto>();
             container.Register<IServicoDeAplicacaoDeCliente, ServicoDeAplicacaoDeCliente>();
@@ -32,6 +34,11 @@ namespace Demo.Infra.IoC
             container.Register<IFabricaDeUnidadeDeTrabalho, FabricaDeUnidadeDeTrabalhoEF>();
 
             DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
+        }
+
+        public static TServico Obter<TServico>() where TServico : class
+        {
+            return container.GetInstance<TServico>();
         }
     }
 }

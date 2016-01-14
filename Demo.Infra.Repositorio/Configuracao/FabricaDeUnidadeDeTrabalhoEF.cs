@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Demo.Infra.Repositorio.Configuracao
+namespace Demo.Infraestrutura.Configuracao
 {
     public class FabricaDeUnidadeDeTrabalhoEF : IFabricaDeUnidadeDeTrabalho
     {

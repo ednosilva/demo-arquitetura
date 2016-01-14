@@ -1,6 +1,6 @@
 ﻿using Demo.Aplicacao.Compartilhado;
 
-namespace Demo.Infra.Repositorio.Configuracao
+namespace Demo.Infraestrutura.Configuracao
 {
     public class UnidadeDeTrabalhoEF : IUnidadeDeTrabalho
     {

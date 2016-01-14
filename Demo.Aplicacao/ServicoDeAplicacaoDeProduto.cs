@@ -13,10 +13,11 @@ namespace Demo.Aplicacao
         private readonly IFabricaDeUnidadeDeTrabalho _fabricaDeUnidadeDeTrabalho;
 
         public ServicoDeAplicacaoDeProduto(IServicoDeCadastroDeProduto servicoDeCadastroDeProduto,
-            IRepositorioDeProduto repositorioDeProduto)
+            IRepositorioDeProduto repositorioDeProduto, IFabricaDeUnidadeDeTrabalho fabricaDeUnidadeDeTrabalho)
         {
             _servicoDeCadastroDeProduto = servicoDeCadastroDeProduto;
             _repositorioDeProduto = repositorioDeProduto;
+            _fabricaDeUnidadeDeTrabalho = fabricaDeUnidadeDeTrabalho;
         }
 
         #region IServicoDeAplicacaoDeProduto Members

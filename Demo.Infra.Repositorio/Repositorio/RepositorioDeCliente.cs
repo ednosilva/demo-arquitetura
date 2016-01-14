@@ -2,8 +2,9 @@
 using System.Linq;
 using Demo.Dominio;
 using Demo.Dominio.Repositórios;
+using Demo.Infraestrutura.Configuracao;
 
-namespace Demo.Infra.Repositorio
+namespace Demo.Infraestrutura.Repositorio
 {
     public class RepositorioDeCliente : RepositorioBase<Cliente>, IRepositorioDeCliente
     {

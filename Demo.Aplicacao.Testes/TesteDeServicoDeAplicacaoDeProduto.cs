@@ -10,25 +10,36 @@ using Demo.Aplicacao.Compartilhado;
 
 namespace Demo.Aplicacao.Testes
 {
+    //public class FabricaDeMockDeUnidadeDeTrabalho : IFabricaDeUnidadeDeTrabalho
+    //{
+    //    public IUnidadeDeTrabalho Criar()
+    //    {
+    //        return new Mock<IUnidadeDeTrabalho>().Object;
+    //    }
+    //}
+
     [TestClass]
-    public class TesteDeServicoDeAplicacaoDeProduto
+    public class TesteDeServicoDeAplicacaoDeProduto : IFabricaDeUnidadeDeTrabalho
     {
         private Mock<IServicoDeCadastroDeProduto> mockDoServicoDeProduto;
         private Mock<IRepositorioDeProduto> mockDoRepositorioDeProduto;
-        private ServicoDeAplicacaoDeProduto servico;
         private Mock<IUnidadeDeTrabalho> mockDaUnidadeDeTrabalho;
+        private ServicoDeAplicacaoDeProduto servico;
+
+        public IUnidadeDeTrabalho Criar()
+        {
+            return mockDaUnidadeDeTrabalho.Object;
+        }
 
         [TestInitialize]
         public void IniciarTestes()
         {
             mockDoServicoDeProduto = new Mock<IServicoDeCadastroDeProduto>();
             mockDoRepositorioDeProduto = new Mock<IRepositorioDeProduto>();
-
-            servico = new ServicoDeAplicacaoDeProduto(mockDoServicoDeProduto.Object, mockDoRepositorioDeProduto.Object);
-
             mockDaUnidadeDeTrabalho = new Mock<IUnidadeDeTrabalho>();
-        }
 
+            servico = new ServicoDeAplicacaoDeProduto(mockDoServicoDeProduto.Object, mockDoRepositorioDeProduto.Object, this);
+        }
 
         [TestMethod]
         public void Quando_CadastrarProduto_chamar_cadastrar_do_dominio_dentro_de_uma_transacao()

@@ -1,11 +1,9 @@
 ﻿using System.Data.Entity;
-using System.Data.Entity.Spatial;
 using System.Data.Entity.SqlServer;
 using System.Diagnostics;
 using Demo.Dominio;
-using Demo.Infra.Repositorio.Configuracao;
 
-namespace Demo.Infra.Repositorio
+namespace Demo.Infraestrutura.Configuracao
 {
     public class ContextoBanco : DbContext
     {

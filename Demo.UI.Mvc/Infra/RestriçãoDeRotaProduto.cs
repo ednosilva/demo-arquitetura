@@ -2,7 +2,6 @@
 using System.Web;
 using System.Web.Routing;
 using Demo.Dominio.Repositórios;
-using Microsoft.Practices.ServiceLocation;
 
 namespace Demo.UI.Mvc.Infra
 {
@@ -20,7 +19,7 @@ namespace Demo.UI.Mvc.Infra
             if ("produto".Equals(controller, StringComparison.InvariantCultureIgnoreCase) &&
                 "deletar".Equals(action, StringComparison.InvariantCultureIgnoreCase))
             {
-                var repositorio = ServiceLocator.Current.GetInstance<IRepositorioDeProduto>();
+                var repositorio = IoC.Obter<IRepositorioDeProduto>();
 
                 var nome = (string) values["nome"];
                 var produto = repositorio.ObterProdutoPorNome(nome);

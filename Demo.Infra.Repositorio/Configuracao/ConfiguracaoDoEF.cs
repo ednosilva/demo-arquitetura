@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using Demo.Dominio;
 
-namespace Demo.Infra.Repositorio.Configuracao
+namespace Demo.Infraestrutura.Configuracao
 {
     public class ClienteConfig : EntityTypeConfiguration<Cliente>
     {

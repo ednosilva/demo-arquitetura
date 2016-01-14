@@ -1,5 +1,4 @@
-﻿using Demo.Infra.IoC;
-using Microsoft.Owin;
+﻿using Microsoft.Owin;
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(Demo.UI.Mvc.Startup))]

@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 using Demo.Aplicacao;
-using Microsoft.Practices.ServiceLocation;
 
 namespace Demo.UI.Mvc.ViewModels
 {
@@ -12,7 +11,7 @@ namespace Demo.UI.Mvc.ViewModels
     {
         public EfetuarVendaViewModel()
         {
-            Transportadoras = new SelectList(criarListaDeTransportadoras(),
+            Transportadoras = new SelectList(CriarListaDeTransportadoras(),
                                              "Value", "Text", Transportadora);
         }
 
@@ -37,11 +36,11 @@ namespace Demo.UI.Mvc.ViewModels
         [DisplayName("Data de saída")]
         public DateTime? DataDeSaida { get; set; }
 
-        private IEnumerable<SelectListItem> criarListaDeTransportadoras()
+        private IEnumerable<SelectListItem> CriarListaDeTransportadoras()
         {
             yield return new SelectListItem {Text = "--SELECIONE--", Value = ""};
 
-            var servicoDeTransportadora = ServiceLocator.Current.GetInstance<ServicoDeAplicacaoDaTransportadora>();
+            var servicoDeTransportadora = IoC.Obter<ServicoDeAplicacaoDaTransportadora>();
             foreach (var transportadora in servicoDeTransportadora.RecuperarTodasAsTransportadoras())
             {
                 yield return new SelectListItem {Text = transportadora.Nome, Value = transportadora.Id.ToString()};

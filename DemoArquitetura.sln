@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{539E32E0-4916-4189-AE2E-40293434D1B5}"
 	ProjectSection(SolutionItems) = preProject
@@ -9,9 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{539E32
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Infra.IoC", "Demo.Infra.IoC\Demo.Infra.IoC.csproj", "{C0CF2703-B202-4F9F-9863-D71E89FAC0A9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Infra.Repositorio", "Demo.Infra.Repositorio\Demo.Infra.Repositorio.csproj", "{3FADEB9F-F965-4F2E-BD24-1BB5619714FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Infraestrutura", "Demo.Infra.Repositorio\Demo.Infraestrutura.csproj", "{3FADEB9F-F965-4F2E-BD24-1BB5619714FD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Aplicacao", "Demo.Aplicacao\Demo.Aplicacao.csproj", "{2F778181-7C3F-4DE8-8F5B-E879D9AC37C5}"
 EndProject
@@ -40,12 +38,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C0CF2703-B202-4F9F-9863-D71E89FAC0A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C0CF2703-B202-4F9F-9863-D71E89FAC0A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C0CF2703-B202-4F9F-9863-D71E89FAC0A9}.Producao|Any CPU.ActiveCfg = Producao|Any CPU
-		{C0CF2703-B202-4F9F-9863-D71E89FAC0A9}.Producao|Any CPU.Build.0 = Producao|Any CPU
-		{C0CF2703-B202-4F9F-9863-D71E89FAC0A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C0CF2703-B202-4F9F-9863-D71E89FAC0A9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3FADEB9F-F965-4F2E-BD24-1BB5619714FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3FADEB9F-F965-4F2E-BD24-1BB5619714FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FADEB9F-F965-4F2E-BD24-1BB5619714FD}.Producao|Any CPU.ActiveCfg = Producao|Any CPU
@@ -93,7 +85,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{C0CF2703-B202-4F9F-9863-D71E89FAC0A9} = {8830CB9B-EEB6-4268-934B-A4AAC19ACEE4}
 		{3FADEB9F-F965-4F2E-BD24-1BB5619714FD} = {8830CB9B-EEB6-4268-934B-A4AAC19ACEE4}
 		{2F778181-7C3F-4DE8-8F5B-E879D9AC37C5} = {4E24489C-BA34-4A50-9BDE-8EBD090A69C6}
 		{9342C7B5-495A-4B24-BB67-E0B0DAC59BE6} = {906708EA-964E-4738-990B-59BE13F22D0B}

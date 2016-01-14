@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using Demo.Dominio;
+using Demo.Infraestrutura.Repositorio;
 
-namespace Demo.Infra.Repositorio.Configuracao
+namespace Demo.Infraestrutura.Configuracao
 {
     public class DemoDatabaseInitialize : DropCreateDatabaseIfModelChanges<ContextoBanco>
     {

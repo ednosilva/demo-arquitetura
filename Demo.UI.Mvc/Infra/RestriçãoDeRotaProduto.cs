@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Demo.Dominio.Vendas;
+using System;
 using System.Web;
 using System.Web.Routing;
-using Demo.Dominio.Repositórios;
 
 namespace Demo.UI.Mvc.Infra
 {

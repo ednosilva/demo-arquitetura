@@ -8,8 +8,8 @@
     <ProjectGuid>{3FADEB9F-F965-4F2E-BD24-1BB5619714FD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Demo.Infra.Repositorio</RootNamespace>
-    <AssemblyName>Demo.Infra.Repositorio</AssemblyName>
+    <RootNamespace>Demo.Infraestrutura</RootNamespace>
+    <AssemblyName>Demo.Infraestrutura</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
@@ -62,23 +62,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuracao\ConfiguracaoDoEF.cs" />
-    <Compile Include="Configuracao\FabricaDeUnidadeDeTrabalhoEF.cs" />
-    <Compile Include="Configuracao\GerenciadorDeContextoBancoHttp.cs" />
-    <Compile Include="Configuracao\UnidadeDeTrabalhoEF.cs" />
-    <Compile Include="Configuracao\DemoDatabaseInitialize.cs" />
-    <Compile Include="Configuracao\ContextoBanco.cs">
+    <Compile Include="Compartilhado\FabricaDeUnidadeDeTrabalhoEF.cs" />
+    <Compile Include="ConfiguracaoEF\GerenciadorDeContextoBancoHttp.cs" />
+    <Compile Include="ConfiguracaoEF\Participantes\ParticipanteConfig.cs" />
+    <Compile Include="ConfiguracaoEF\Participantes\RepresentanteConfig.cs" />
+    <Compile Include="ConfiguracaoEF\Participantes\TransportadoraConfig.cs" />
+    <Compile Include="ConfiguracaoEF\Participantes\ClienteConfig.cs" />
+    <Compile Include="Compartilhado\UnidadeDeTrabalhoEF.cs" />
+    <Compile Include="ConfiguracaoEF\DemoDatabaseInitialize.cs" />
+    <Compile Include="ConfiguracaoEF\ContextoBanco.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Configuracao\IGerenciadorDeContexoBanco.cs" />
-    <Compile Include="Repositorio\RepositorioDeCliente.cs" />
-    <Compile Include="Repositorio\RepositorioBase.cs" />
+    <Compile Include="ConfiguracaoEF\IGerenciadorDeContexoBanco.cs" />
+    <Compile Include="ConfiguracaoEF\Vendas\VendaConfig.cs" />
+    <Compile Include="ConfiguracaoEF\Vendas\ItemDaVendaConfig.cs" />
+    <Compile Include="ConfiguracaoEF\Vendas\ContaAReceberConfig.cs" />
+    <Compile Include="ConfiguracaoEF\Vendas\ComissaoConfig.cs" />
+    <Compile Include="ConfiguracaoEF\Vendas\ProdutoConfig.cs" />
+    <Compile Include="Repositorios\Participantes\RepositorioDeCliente.cs" />
+    <Compile Include="Compartilhado\RepositorioBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositorio\RepositorioDeContasAReceber.cs" />
-    <Compile Include="Repositorio\RepositorioDeProduto.cs" />
-    <Compile Include="Repositorio\RepositorioDeRepresentante.cs" />
-    <Compile Include="Repositorio\RepositorioDeTransportadora.cs" />
-    <Compile Include="Repositorio\RepositorioDeVenda.cs" />
+    <Compile Include="Repositorios\Vendas\RepositorioDeContasAReceber.cs" />
+    <Compile Include="Repositorios\Vendas\RepositorioDeProduto.cs" />
+    <Compile Include="Repositorios\Participantes\RepositorioDeRepresentante.cs" />
+    <Compile Include="Repositorios\Participantes\RepositorioDeTransportadora.cs" />
+    <Compile Include="Repositorios\Vendas\RepositorioDeVenda.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Demo.Aplicacao\Demo.Aplicacao.csproj">
@@ -94,6 +102,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

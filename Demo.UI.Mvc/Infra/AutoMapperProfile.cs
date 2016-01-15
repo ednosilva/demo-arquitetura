@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Demo.Dominio;
+using Demo.Dominio.Vendas;
 using Demo.UI.Mvc.ViewModels;
 
 namespace Demo.UI.Mvc.Infra

@@ -51,29 +51,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProdutoException.cs" />
-    <Compile Include="Servicos\IServicoDeCadastroDeProduto.cs" />
-    <Compile Include="Servicos\IServicoDeVenda.cs" />
+    <Compile Include="Vendas\ProdutoException.cs" />
+    <Compile Include="Vendas\IServicoDeCadastroDeProduto.cs" />
+    <Compile Include="Vendas\IServicoDeVenda.cs" />
     <Compile Include="Compartilhado\IRepositorioBase.cs" />
-    <Compile Include="Repositorios\IRepositorioDeCliente.cs" />
-    <Compile Include="Repositorios\IRepositorioDeContasAReceber.cs" />
-    <Compile Include="Repositorios\IRepositorioDeProduto.cs" />
-    <Compile Include="Repositorios\IRepositorioDeRepresentante.cs" />
-    <Compile Include="Repositorios\IRepositorioDeTransportadora.cs" />
-    <Compile Include="Repositorios\IRepositorioDeVenda.cs" />
-    <Compile Include="Servicos\ServicoDeCadastroDeProduto.cs" />
-    <Compile Include="Compartilhado\DemoArquiteturaException.cs" />
-    <Compile Include="Cliente.cs" />
-    <Compile Include="Comissao.cs" />
-    <Compile Include="ContaAReceber.cs" />
+    <Compile Include="Participantes\IRepositorioDeCliente.cs" />
+    <Compile Include="Vendas\IRepositorioDeContasAReceber.cs" />
+    <Compile Include="Vendas\IRepositorioDeProduto.cs" />
+    <Compile Include="Participantes\IRepositorioDeRepresentante.cs" />
+    <Compile Include="Participantes\IRepositorioDeTransportadora.cs" />
+    <Compile Include="Vendas\IRepositorioDeVenda.cs" />
+    <Compile Include="Vendas\ServicoDeCadastroDeProduto.cs" />
+    <Compile Include="Compartilhado\DominioException.cs" />
+    <Compile Include="Participantes\Cliente.cs" />
+    <Compile Include="Vendas\Comissao.cs" />
+    <Compile Include="Vendas\ContaAReceber.cs" />
     <Compile Include="Compartilhado\IIdentificavel.cs" />
-    <Compile Include="Venda.cs" />
-    <Compile Include="ItemDaVenda.cs" />
-    <Compile Include="Participante.cs" />
-    <Compile Include="Produto.cs" />
+    <Compile Include="Vendas\Venda.cs" />
+    <Compile Include="Vendas\ItemDaVenda.cs" />
+    <Compile Include="Participantes\Participante.cs" />
+    <Compile Include="Vendas\Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Representante.cs" />
-    <Compile Include="Transportadora.cs" />
+    <Compile Include="Participantes\Representante.cs" />
+    <Compile Include="Participantes\Transportadora.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Modelo.cd" />

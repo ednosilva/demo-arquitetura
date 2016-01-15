@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 using Demo.Aplicacao;
+using Demo.Aplicacao.Participantes;
 
 namespace Demo.UI.Mvc.ViewModels
 {

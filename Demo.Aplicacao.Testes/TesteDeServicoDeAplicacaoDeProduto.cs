@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using Demo.Dominio;
-using Demo.Dominio.Repositórios;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Moq.Sequences;
-using Demo.Dominio.Servicos;
 using Demo.Aplicacao.Compartilhado;
+using Demo.Dominio.Vendas;
+using Demo.Aplicacao.Vendas;
 
 namespace Demo.Aplicacao.Testes
 {

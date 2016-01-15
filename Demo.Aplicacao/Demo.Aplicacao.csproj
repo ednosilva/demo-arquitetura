@@ -54,13 +54,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Compartilhado\IFabricaDeUnidadeDeTrabalho.cs" />
-    <Compile Include="IServicoDeAplicacaoDaTransportadora.cs" />
-    <Compile Include="IServicoDeAplicacaoDeCliente.cs" />
-    <Compile Include="IServicoDeAplicacaoDeProduto.cs" />
+    <Compile Include="Participantes\IServicoDeAplicacaoDaTransportadora.cs" />
+    <Compile Include="Participantes\IServicoDeAplicacaoDeCliente.cs" />
+    <Compile Include="Vendas\IServicoDeAplicacaoDeProduto.cs" />
     <Compile Include="Compartilhado\IUnidadeDeTrabalho.cs" />
-    <Compile Include="ServicoDeAplicacaoDaTransportadora.cs" />
-    <Compile Include="ServicoDeAplicacaoDeCliente.cs" />
-    <Compile Include="ServicoDeAplicacaoDeProduto.cs" />
+    <Compile Include="Participantes\ServicoDeAplicacaoDaTransportadora.cs" />
+    <Compile Include="Participantes\ServicoDeAplicacaoDeCliente.cs" />
+    <Compile Include="Vendas\ServicoDeAplicacaoDeProduto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

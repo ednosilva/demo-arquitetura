@@ -5,6 +5,8 @@ using Demo.UI.Mvc.ViewModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Demo.Aplicacao;
+using Demo.Aplicacao.Vendas;
+using Demo.Dominio.Vendas;
 
 namespace Demo.UI.Testes
 {

@@ -1,5 +1,5 @@
-﻿using Demo.Dominio.Repositórios;
-using Demo.Dominio.Repositórios;
+﻿using Demo.Aplicacao.Participantes;
+using Demo.Dominio.Participantes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 

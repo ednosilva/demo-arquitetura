@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using Demo.Aplicacao;
+using Demo.Aplicacao.Participantes;
 
 namespace Demo.UI.Mvc.Controllers
 {

@@ -4,6 +4,8 @@ using System.Web.Mvc;
 using Demo.Dominio;
 using Demo.UI.Mvc.ViewModels;
 using Demo.Aplicacao;
+using Demo.Aplicacao.Vendas;
+using Demo.Dominio.Vendas;
 
 namespace Demo.UI.Mvc.Controllers
 {

@@ -1,12 +1,14 @@
 ﻿using System.Web.Mvc;
-using Demo.Aplicacao;
-using Demo.Dominio.Servicos;
-using Demo.Infraestrutura.Repositorio;
 using SimpleInjector;
 using SimpleInjector.Integration.Web.Mvc;
 using Demo.Aplicacao.Compartilhado;
-using Demo.Dominio.Repositórios;
 using Demo.Infraestrutura.Configuracao;
+using Demo.Aplicacao.Vendas;
+using Demo.Dominio.Participantes;
+using Demo.Dominio.Vendas;
+using Demo.Aplicacao.Participantes;
+using Demo.Infraestrutura.Repositorios.Participantes;
+using Demo.Infraestrutura.Repositorios.Vendas;
 
 namespace Demo.UI.Mvc
 {

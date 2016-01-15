@@ -4,6 +4,8 @@ using Demo.UI.Mvc.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Demo.Aplicacao;
+using Demo.Aplicacao.Participantes;
+using Demo.Dominio.Participantes;
 
 namespace Demo.UI.Testes
 {

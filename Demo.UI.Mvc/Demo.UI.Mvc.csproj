@@ -218,7 +218,7 @@
       <Project>{9342C7B5-495A-4B24-BB67-E0B0DAC59BE6}</Project>
       <Name>Demo.Dominio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Demo.Infra.Repositorio\Demo.Infraestrutura.csproj">
+    <ProjectReference Include="..\Demo.Infraestrutura\Demo.Infraestrutura.csproj">
       <Project>{3fadeb9f-f965-4f2e-bd24-1bb5619714fd}</Project>
       <Name>Demo.Infraestrutura</Name>
     </ProjectReference>

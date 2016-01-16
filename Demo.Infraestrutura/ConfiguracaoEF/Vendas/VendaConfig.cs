@@ -1,10 +1,5 @@
 ﻿using Demo.Dominio.Vendas;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Demo.Infraestrutura.Configuracao.Vendas
 {
@@ -15,8 +10,8 @@ namespace Demo.Infraestrutura.Configuracao.Vendas
             ToTable("Venda");
 
             Property(x => x.Descricao).HasMaxLength(300).IsRequired();
-            Property(x => x.ChaveDeAcessoNFE).IsFixedLength().HasMaxLength(44);
-            Property(x => x.DataDaImpressao).IsOptional();
+            //Property(x => x.ChaveDeAcessoNfe).IsFixedLength().HasMaxLength(44);
+            //Property(x => x.DataDaImpressao).IsOptional();
 
             HasRequired(x => x.Cliente)
                 .WithMany();

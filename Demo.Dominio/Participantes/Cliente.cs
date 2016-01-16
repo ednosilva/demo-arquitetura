@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Demo.Dominio.Participantes
 {
-    public class Cliente : Participante
+    public class Cliente : Participante, IEquatable<Cliente>
     {
         public decimal LimiteDeCredito { get; private set; }
 
@@ -27,6 +27,27 @@ namespace Demo.Dominio.Participantes
             this.Nome = nome;
 
             this.Representantes = new List<Representante>();
+        }
+
+        public bool Equals(Cliente outro)
+        {
+            if (outro == null)
+                return false;
+
+            if (outro == this)
+                return true;
+
+            return this.Inscricao.Equals(outro.Inscricao);
+        }
+
+        public override bool Equals(object obj)
+        {
+            return this.Equals(obj as Cliente);
+        }
+
+        public override int GetHashCode()
+        {
+            return this.Inscricao.GetHashCode();
         }
     }
 }

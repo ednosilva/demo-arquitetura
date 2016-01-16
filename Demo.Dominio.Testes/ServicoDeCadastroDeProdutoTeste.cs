@@ -22,7 +22,7 @@ namespace Demo.Dominio.Testes
         public void Quando_cadastrar_um_produto_que_ja_existe_lança_exception()
         {
             // arrage
-            var produto = new Produto(codigoDeBarras: 1238, nome: "Camisa Polo", preço: 100m);
+            var produto = new Produto(nome: "Camisa Polo", preço: 100m);
             _mockIRepositorioDeProduto
                 .Setup(x => x.ProdutoJáExiste(produto.Nome))
                 .Returns(true);
@@ -35,7 +35,7 @@ namespace Demo.Dominio.Testes
         public void Quando_cadastrar_um_produto_que_não_existe_insere_no_repositorio()
         {
             // arrage
-            var produto = new Produto(codigoDeBarras: 1238, nome: "Camisa Polo", preço: 100m);
+            var produto = new Produto(nome: "Camisa Polo", preço: 100m);
             _mockIRepositorioDeProduto
                 .Setup(x => x.ProdutoJáExiste(produto.Nome))
                 .Returns(false);

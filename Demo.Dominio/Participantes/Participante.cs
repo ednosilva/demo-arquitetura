@@ -22,5 +22,10 @@ namespace Demo.Dominio.Participantes
             this.Inscricao = inscricao;
             this.Nome = nome;
         }
+
+        public override string ToString()
+        {
+            return string.Format("{0} - {1}", this.Inscricao, this.Nome);
+        }
     }
 }

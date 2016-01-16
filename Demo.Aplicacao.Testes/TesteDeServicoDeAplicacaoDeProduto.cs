@@ -44,7 +44,7 @@ namespace Demo.Aplicacao.Testes
         public void Quando_CadastrarProduto_chamar_cadastrar_do_dominio_dentro_de_uma_transacao()
         {
             // arrange
-            var produto = new Produto(codigoDeBarras: 1238, nome: "Camisa Polo", preço: 100m);
+            var produto = new Produto(nome: "Camisa Polo", preço: 100m);
             using (Sequence.Create())
             {
                 mockDaUnidadeDeTrabalho.Setup(_ => _.Iniciar()).InSequence();
@@ -91,7 +91,7 @@ namespace Demo.Aplicacao.Testes
         public void Quando_RecuperarPorNome_recuperar_por_nome_no_repositorio()
         {
             // arrange
-            var produto = new Produto(codigoDeBarras: 1238, nome: "Camisa Polo", preço: 100m);
+            var produto = new Produto(nome: "Camisa Polo", preço: 100m);
             mockDoRepositorioDeProduto.Setup(_ => _.ObterProdutoPorNome("nome a ser pesquisado")).Returns(produto);
 
             // act

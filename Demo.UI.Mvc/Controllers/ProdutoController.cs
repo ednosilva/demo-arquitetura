@@ -59,12 +59,7 @@ namespace Demo.UI.Mvc.Controllers
         {
             if (ModelState.IsValid)
             {
-                var produto = new Produto
-                                  (
-                                      codigoDeBarras: 1234,
-                                      nome: produtoViewModel.Nome,
-                                      preço: produtoViewModel.Preco
-                                  );
+                var produto = new Produto(nome: produtoViewModel.Nome, preço: produtoViewModel.Preco);
 
                 try
                 {

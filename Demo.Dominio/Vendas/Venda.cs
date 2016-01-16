@@ -2,6 +2,7 @@
 using Demo.Dominio.Participantes;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Demo.Dominio.Vendas
 {
@@ -9,7 +10,7 @@ namespace Demo.Dominio.Vendas
     {
         public Transportadora Transportadora { get; private set; }
 
-        public Transportadora Despachante { get; private set; }
+        //public Transportadora Despachante { get; private set; }
 
         public virtual Cliente Cliente { get; private set; }
 
@@ -29,16 +30,16 @@ namespace Demo.Dominio.Vendas
 
         public string Descricao { get; private set; }
 
-        public bool FoiImpressa { get; private set; }
+        //public bool FoiImpressa { get; private set; }
 
-        public DateTime? DataDaImpressao { get; private set; }
+        //public DateTime? DataDaImpressao { get; private set; }
 
-        public string ChaveDeAcessoNFE { get; private set; }
+        //public string ChaveDeAcessoNfe { get; private set; }
 
         private Venda() { }
 
         public Venda(Cliente cliente, int numeroDaNota, DateTime dataDaEmissao,
-            DateTime dataDaSaida, int valorTotal, string descricao)
+            DateTime dataDaSaida, string descricao, IEnumerable<ItemDaVenda> itens)
         {
             if (cliente == null)
                 throw new ArgumentNullException("cliente");
@@ -53,22 +54,25 @@ namespace Demo.Dominio.Vendas
             this.NumeroDaNota = numeroDaNota;
             this.DataDaEmissao = dataDaEmissao;
             this.DataDaSaida = dataDaSaida;
-            this.ValorTotal = valorTotal;
             this.Descricao = descricao;
 
             this.Comissoes = new List<Comissao>();
             this.ContasAReceber = new List<ContaAReceber>();
-            this.ItensDaVenda = new List<ItemDaVenda>();
+            this.ItensDaVenda = new List<ItemDaVenda>(itens);
+
+            this.ValorTotal = ItensDaVenda.Sum(i => i.ValorTotal);
+
+            GerarComissoes();
+            GerarContasAReceber();
         }
 
-        public virtual IList<Comissao> GerarComissoes()
+        protected virtual void GerarComissoes()
         {
-            return null;
+
         }
 
-        public virtual IList<ContaAReceber> GerarContasAReceber()
+        protected virtual void GerarContasAReceber()
         {
-            return null;
         }
 
         public void AdicionarItem(ItemDaVenda itemDaVenda)
@@ -77,6 +81,32 @@ namespace Demo.Dominio.Vendas
                 throw new ArgumentNullException("itemDaVenda");
 
             this.ItensDaVenda.Add(itemDaVenda);
+        }
+
+        public bool Equals(Venda outra)
+        {
+            if (outra == null)
+                return false;
+
+            if (outra == this)
+                return true;
+
+            return this.NumeroDaNota.Equals(outra.NumeroDaNota);
+        }
+
+        public override bool Equals(object obj)
+        {
+            return this.Equals(obj as Venda);
+        }
+
+        public override int GetHashCode()
+        {
+            return this.NumeroDaNota.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0} - {1}", this.NumeroDaNota, this.Cliente.Nome);
         }
     }
 }

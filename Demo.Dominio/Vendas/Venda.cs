@@ -66,9 +66,22 @@ namespace Demo.Dominio.Vendas
             GerarContasAReceber();
         }
 
-        protected virtual void GerarComissoes()
+        private void GerarComissoes()
         {
+            foreach (var item in ItensDaVenda)
+            {
+                var comissao = Comissoes.SingleOrDefault(c => c.Representante == item.Representante);
 
+                if (comissao == null)
+                {
+                    comissao = new Comissao(item.Representante, item.ValorTotal);
+                    Comissoes.Add(comissao);
+                }
+                else
+                {
+                    comissao.Aumentar(item.ValorTotal);
+                }
+            }
         }
 
         protected virtual void GerarContasAReceber()

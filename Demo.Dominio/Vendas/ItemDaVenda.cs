@@ -30,8 +30,8 @@ namespace Demo.Dominio.Vendas
 
         private ItemDaVenda() { }
 
-        public ItemDaVenda(string descricao, int valorUnitario, int quantidade,
-            Produto produto, Representante representante)
+        public ItemDaVenda(Produto produto, int quantidade,
+            Representante representante, string descricao)
         {
             if (string.IsNullOrWhiteSpace(descricao))
                 throw new ArgumentOutOfRangeException("descricao");
@@ -42,12 +42,12 @@ namespace Demo.Dominio.Vendas
             if (representante == null)
                 throw new ArgumentNullException("representante");
 
-            this.Descricao = descricao;
-            this.ValorUnitario = valorUnitario;
-            this.Quantidade = quantidade;
-            this.ValorTotal = valorUnitario * quantidade;
             this.Produto = produto;
+            this.ValorUnitario = produto.Preço;
+            this.Quantidade = quantidade;
+            this.ValorTotal = produto.Preço * quantidade;
             this.Representante = representante;
+            this.Descricao = descricao;
         }
 
         public bool Equals(ItemDaVenda outro)

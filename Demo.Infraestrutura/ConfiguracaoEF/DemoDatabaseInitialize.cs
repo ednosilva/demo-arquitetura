@@ -23,8 +23,8 @@ namespace Demo.Infraestrutura.Configuracao
 
             var representante = new Representante(inscricao: "001.910.000-00", nome: "Renan", percentualDeComissao: 5);
 
-            var itemDaVenda = new ItemDaVenda(descricao: "Coca-cola 2L", valorUnitario: 4,
-                quantidade: 2, produto: produto, representante: representante);
+            var itemDaVenda = new ItemDaVenda(produto: produto, valorUnitario: 4,
+                quantidade: 2, representante: representante, descricao: "Coca-cola 2L");
 
             var itensDaVenda = new List<ItemDaVenda> { itemDaVenda };
 
